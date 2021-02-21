@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Feb 19 22:13:38 2021
-
-@author: myconda
+description : Run and test sir_network_modeller
+author      : bveitch
+version     : 1.0
+project     : MouseAndCheese (experiments with random walks)
+date        : Friday 19th February     
 """
 
 import numpy as np

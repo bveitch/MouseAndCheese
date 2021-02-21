@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-description : Run and test sir_network_modeller
+description : Experiment with coding adaptive random walk
 author      : bveitch
 version     : 1.0
 project     : MouseAndCheese (experiments with random walks)

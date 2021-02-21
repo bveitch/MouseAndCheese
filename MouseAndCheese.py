@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-description : Mouse moves in random walks, search probablilities updated
+description : Run and test sir_network_modeller
 author      : bveitch
 version     : 1.0
 project     : MouseAndCheese (experiments with random walks)
@@ -152,10 +152,12 @@ history=[[mouse_pos[0],mouse_pos[1]]]
 distances_from_cheese=[distance(mouse_pos,cheese_pos)]
 
 for i in range(number_iterations):
+    #get a direction from existing probabilities
     direction = get_move(search)
     print("iteration = ", i, "direction = ", direction)
-   
+    #move to a new position in direction
     mouse_pos = make_move(direction,mouse_pos)
+    #update states
     history.append([mouse_pos[0],mouse_pos[1]])
     d=distance(mouse_pos,cheese_pos)
     distances_from_cheese.append(d)
@@ -164,12 +166,13 @@ for i in range(number_iterations):
         print('Yay! The mouse found the cheese')
         break
     
+    #score this position
     new_score=calculate_score(mouse_pos,grid2D)
-    
+    #update mouse's memory
     update_memory(memory,direction,new_score-current_score)
     
     current_score=new_score
-   
+    #calculate probabilities for next move (hard bit)
     if(len(memory) == memsize):
         search=reassign_weights_for_search(memory,search)
 
